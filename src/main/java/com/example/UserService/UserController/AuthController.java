@@ -15,6 +15,7 @@ import com.example.UserService.UserRepositories.UserRepository;
 public class AuthController{
     @Autowired
     UserRepository userRepository;
+    
 
     @PostMapping("/signup")
     public ResponseEntity<String> registerUser(@RequestBody UserEntity userEntity){
