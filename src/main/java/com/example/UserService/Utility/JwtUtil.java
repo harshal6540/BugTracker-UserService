@@ -30,7 +30,7 @@ public class JwtUtil {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 )) // 1 hour expiry
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 *30 )) // 1 hour expiry
                 .signWith(getSignKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
