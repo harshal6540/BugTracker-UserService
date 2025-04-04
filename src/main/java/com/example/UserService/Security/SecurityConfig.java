@@ -30,6 +30,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())  // Disable CSRF for API requests
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()  // ✅ Allow signup & login requests
+                .requestMatchers("/users/**").permitAll()
                 .anyRequest().authenticated() // Secure other endpoints
             )
             .authenticationProvider(authenticationProvider()) // Use custom authentication provider
